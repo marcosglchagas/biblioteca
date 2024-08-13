@@ -1,7 +1,7 @@
 import { generateId } from '../utils/generateId'
 import { ItemVenda } from './ItemVenda'
 
-export class VendaPaes {
+export class VendaLivros {
   id: number
   cpfCliente: string
   valorTotal: number

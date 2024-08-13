@@ -1,33 +1,33 @@
-import { ModalidadePaes } from "../model/ModalidadePaes"
-import { ModalidadePaesRepository, modalidadePaesList } from "../repository/ModalidadePaesRepository"
+import { ModalidadeLivros } from "../model/ModalidadeLivros"
+import { ModalidadeLivrosRepository, modalidadeLivrosList } from "../repository/ModalidadeLivrosRepository"
 
-export class ModalidadePaesService {
-    modalidadePaesRepository: ModalidadePaesRepository = new ModalidadePaesRepository();
+export class ModalidadeLivrosService {
+    modalidadeLivrosRepository: ModalidadeLivrosRepository = new ModalidadeLivrosRepository();
 
-    cadastrarModalidade(modalidade: ModalidadePaes) {
-        const existeNomeModalidade: boolean = modalidadePaesList.some((m) => m.nome === modalidade.nome)
-        if(modalidadePaesList.length < 3) {
+    cadastrarModalidade(modalidade: ModalidadeLivros) {
+        const existeNomeModalidade: boolean = modalidadeLivrosList.some((m) => m.nome === modalidade.nome)
+        if(modalidadeLivrosList.length < 3) {
             const { nome, vegano } = modalidade
             if (!nome || vegano === undefined) {
                 throw new Error("Informações invalidas")
             } else if (existeNomeModalidade) {
                 throw new Error("Nome da modalidade já existe.")
             }
-            const novaModalidade = new ModalidadePaes(nome, vegano)
-            this.modalidadePaesRepository.insereModalidade(JSON.parse(JSON.stringify(novaModalidade)))
+            const novaModalidade = new ModalidadeLivros(nome, vegano)
+            this.modalidadeLivrosRepository.insereModalidade(JSON.parse(JSON.stringify(novaModalidade)))
             return novaModalidade
         } else {
             throw new Error("Número de modalidades atingida")
         }
     }
 
-    consultarModalidade(id: any): ModalidadePaes | undefined {
+    consultarModalidade(id: any): ModalidadeLivros | undefined {
         const idNumber: number = parseInt(id, 10)
-        return this.modalidadePaesRepository.filtrarModalidadePorId(idNumber)
+        return this.modalidadeLivrosRepository.filtrarModalidadePorId(idNumber)
     }
 
-    todasModalidade(): ModalidadePaes[] {
-        return this.modalidadePaesRepository.filtrarTodasModalidades()
+    todasModalidade(): ModalidadeLivros[] {
+        return this.modalidadeLivrosRepository.filtrarTodasModalidades()
     }
 
     deletarModalidade(id: string) {
@@ -37,10 +37,10 @@ export class ModalidadePaesService {
             throw new Error("Modalidade não encontrada")
         }
 
-        return this.modalidadePaesRepository.deletaModalidade(idNumber)
+        return this.modalidadeLivrosRepository.deletaModalidade(idNumber)
     }
 
-    atualizarModalidade(modalidadeData: ModalidadePaes): ModalidadePaes {
+    atualizarModalidade(modalidadeData: ModalidadeLivros): ModalidadeLivros {
         const { id, nome, vegano } = modalidadeData
         if (!nome || !vegano || !id) {
             throw new Error("Informações incompletas")
@@ -49,7 +49,7 @@ export class ModalidadePaesService {
         if (modalidadeEncontrada) {
             modalidadeEncontrada.vegano = vegano
             modalidadeEncontrada.nome = nome
-            this.modalidadePaesRepository.atualizaModalidade(modalidadeEncontrada)
+            this.modalidadeLivrosRepository.atualizaModalidade(modalidadeEncontrada)
         } else {
             throw new Error("Modalidade não encontrada!!!")
         }

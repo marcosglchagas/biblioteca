@@ -1,6 +1,6 @@
 import { generateId } from '../utils/generateId'
 
-export class ModalidadePaes {
+export class ModalidadeLivros {
   id: number
   nome: string
   vegano: boolean

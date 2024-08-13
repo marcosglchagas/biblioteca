@@ -1,7 +1,7 @@
 import express from 'express'
 import { atualizarModalidade, cadastrarModalidade, consultarModalidade, deletarModalidade, listaModalidades } from './controller/ModalidadeLivrosController'
 import { insereEstoque, listaEstoques, consultarEstoque, atualizarEstoque, deletarQuantidadeEstoque  } from './controller/EstoqueLivrosController'
-import { insereVenda, listaVendas } from './controller/AluguelLivrosController'
+import { insereVenda, listaVendas } from './controller/VendaLivrosController'
 
 
 const app = express()

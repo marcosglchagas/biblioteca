@@ -1,6 +1,6 @@
 import { generateId } from '../utils/generateId'
 
-export class EstoquePaes {
+export class EstoqueLivros {
   id: number
   modalidadeId: number
   quantidade: number

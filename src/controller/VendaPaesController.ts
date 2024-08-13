@@ -1,11 +1,11 @@
-import { VendaPaesService } from '../service/VendaPaesService'
+import { VendaLivrosService } from '../service/VendaLivrosService'
 import { Request, Response } from 'express'
 
-const vendaPaesService = new VendaPaesService()
+const vendaLivrosService = new VendaLivrosService()
 
 export function insereVenda(req: Request, res: Response) {
   try {
-    const novaVenda = vendaPaesService.insereVenda(req.body)
+    const novaVenda = vendaLivrosService.insereVenda(req.body)
     res.status(200).json({
       mensagem: "Novo item adicionado a venda",
       item: novaVenda
@@ -19,7 +19,7 @@ export function insereVenda(req: Request, res: Response) {
 
 export function listaVendas(req: Request, res: Response) {
   try {
-    res.status(200).json(vendaPaesService.todasVendas())
+    res.status(200).json(vendaLivrosService.todasVendas())
   } catch (error: any) {
     res.status(400).json({ mensagem: error.message })
   }
