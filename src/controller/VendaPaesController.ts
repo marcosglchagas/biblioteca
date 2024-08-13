@@ -1,14 +1,14 @@
-import { VendaLivrosService } from '../service/VendaLivrosService'
+import { AluguelLivrosService } from '../service/AluguelLivrosService'
 import { Request, Response } from 'express'
 
-const vendaLivrosService = new VendaLivrosService()
+const AluguelLivrosService = new AluguelLivrosService()
 
-export function insereVenda(req: Request, res: Response) {
+export function insereAluguel(req: Request, res: Response) {
   try {
-    const novaVenda = vendaLivrosService.insereVenda(req.body)
+    const novaAluguel = AluguelLivrosService.insereAluguel(req.body)
     res.status(200).json({
-      mensagem: "Novo item adicionado a venda",
-      item: novaVenda
+      mensagem: "Novo item adicionado a Aluguel",
+      item: novaAluguel
     })
   } catch (error: any) {
     res.status(400).json({ mensagem: error.message })
@@ -17,9 +17,9 @@ export function insereVenda(req: Request, res: Response) {
 }
 
 
-export function listaVendas(req: Request, res: Response) {
+export function listaAluguels(req: Request, res: Response) {
   try {
-    res.status(200).json(vendaLivrosService.todasVendas())
+    res.status(200).json(AluguelLivrosService.todasAluguels())
   } catch (error: any) {
     res.status(400).json({ mensagem: error.message })
   }

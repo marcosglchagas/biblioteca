@@ -1,17 +1,17 @@
 import { generateId } from '../utils/generateId'
-import { ItemVenda } from './ItemVenda'
+import { ItemAluguel } from './ItemAluguel'
 
-export class VendaLivros {
+export class AluguelLivros {
   id: number
   cpfCliente: string
   valorTotal: number
-  itensVenda: Array<ItemVenda> = []
+  itensAluguel: Array<ItemAluguel> = []
 
-  constructor(cpfCliente: string, itensVenda: ItemVenda[], valorTotal: number ) {
+  constructor(cpfCliente: string, itensAluguel: ItemAluguel[], valorTotal: number ) {
     this.id = generateId()
     this.cpfCliente = cpfCliente
     this.valorTotal =  valorTotal
-    this.itensVenda = itensVenda
+    this.itensAluguel = itensAluguel
   }
 
 }

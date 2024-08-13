@@ -1,7 +1,7 @@
 import express from 'express'
 import { atualizarModalidade, cadastrarModalidade, consultarModalidade, deletarModalidade, listaModalidades } from './controller/ModalidadeLivrosController'
 import { insereEstoque, listaEstoques, consultarEstoque, atualizarEstoque, deletarQuantidadeEstoque  } from './controller/EstoqueLivrosController'
-import { insereVenda, listaVendas } from './controller/VendaLivrosController'
+import { insereAluguel, listaAluguels } from './controller/AluguelLivrosController'
 
 
 const app = express()
@@ -27,9 +27,9 @@ app.get('/api/estoque/:id', consultarEstoque)
 app.put('/api/estoque', atualizarEstoque)
 app.delete('/api/estoque', deletarQuantidadeEstoque)
 
-/*VENDAS Livros*/
-app.post('/api/venda', insereVenda)
-app.get('/api/venda', listaVendas)
+/*AluguelS Livros*/
+app.post('/api/Aluguel', insereAluguel)
+app.get('/api/Aluguel', listaAluguels)
 
 
 app.listen(PORT, logInfo)

@@ -1,39 +1,39 @@
-import { VendaLivros } from '../model/VendasLivros'
-import { VendaLivrosRepository } from '../repository/VendaLivrosRepository';
+import { AluguelLivros } from '../model/AluguelsLivros'
+import { AluguelLivrosRepository } from '../repository/AluguelLivrosRepository';
 import { EstoqueLivrosService } from './EstoqueLivrosService'
 import { ModalidadeLivrosService } from './ModalidadeLivrosService'
 
-export class VendaLivrosService {
-  vendaLivrosRepository = new VendaLivrosRepository()
+export class AluguelLivrosService {
+  AluguelLivrosRepository = new AluguelLivrosRepository()
   estoqueLivrosService = new EstoqueLivrosService()
   modalidadeLivrosService = new ModalidadeLivrosService()
 
-  insereVenda(venda: VendaLivros) {
-   const {cpfCliente, itensVenda} = venda
-   if(!cpfCliente || !itensVenda) {
+  insereAluguel(Aluguel: AluguelLivros) {
+   const {cpfCliente, itensAluguel} = Aluguel
+   if(!cpfCliente || !itensAluguel) {
     throw new Error("Itens inválidos")
    }
 
    let valorTotal: number = 0
    let nomeModalidade: string | undefined;
-   itensVenda.map((item) => {
+   itensAluguel.map((item) => {
     const estoqueLivrosId = item.estoqueLivrosId
     const estoqueExiste = this.estoqueLivrosService.consultarEstoque(estoqueLivrosId)
     if(estoqueExiste && estoqueExiste.quantidade > item.quantidade) {
-      valorTotal += item.quantidade * estoqueExiste.precoVenda
+      valorTotal += item.quantidade * estoqueExiste.precoAluguel
       estoqueExiste.quantidade -= item.quantidade
     } else {
       throw new Error("Estoque de pães não existe.")
     }
    })
 
-   const novaVenda = new VendaLivros(cpfCliente, itensVenda, valorTotal)
-   this.vendaLivrosRepository.insereVenda(novaVenda)
-   return novaVenda
+   const novaAluguel = new AluguelLivros(cpfCliente, itensAluguel, valorTotal)
+   this.AluguelLivrosRepository.insereAluguel(novaAluguel)
+   return novaAluguel
   }
 
 
-  todasVendas(): VendaLivros[] {
-    return this.vendaLivrosRepository.filtrarTodasVendas()
+  todasAluguels(): AluguelLivros[] {
+    return this.AluguelLivrosRepository.filtrarTodasAluguels()
 }
 }

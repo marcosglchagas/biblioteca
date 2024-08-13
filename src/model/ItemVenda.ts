@@ -1,6 +1,6 @@
-import { VendaLivros } from './VendasLivros'
+import { AluguelLivros } from './AluguelsLivros'
 
-export class ItemVenda {
+export class ItemAluguel {
   estoqueLivrosId: number
   quantidade: number
 

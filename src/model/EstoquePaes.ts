@@ -4,12 +4,12 @@ export class EstoqueLivros {
   id: number
   modalidadeId: number
   quantidade: number
-  precoVenda: number
+  precoAluguel: number
 
-  constructor(modalidadeId: number, quantidade: number, precoVenda: number) {
+  constructor(modalidadeId: number, quantidade: number, precoAluguel: number) {
     this.id = generateId()
     this.modalidadeId = modalidadeId
     this.quantidade = quantidade
-    this.precoVenda = precoVenda
+    this.precoAluguel = precoAluguel
   }
 }

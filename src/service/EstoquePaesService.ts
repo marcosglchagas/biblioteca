@@ -6,14 +6,14 @@ export class EstoqueLivrosService {
   estoqueLivrosRepository: EstoqueLivrosRepository = new EstoqueLivrosRepository()
 
   insereEstoque(itemEstoque: EstoqueLivros) {
-    const { modalidadeId, quantidade, precoVenda } = itemEstoque
+    const { modalidadeId, quantidade, precoAluguel } = itemEstoque
 
-    if (!modalidadeId || !quantidade || !precoVenda) {
+    if (!modalidadeId || !quantidade || !precoAluguel) {
       throw new Error("Informações incompletas")
     }
 
 
-    const novoEstoque = new EstoqueLivros(modalidadeId, quantidade, precoVenda)
+    const novoEstoque = new EstoqueLivros(modalidadeId, quantidade, precoAluguel)
     const existeModalidade = modalidadeLivrosList.find((modalidade) => modalidade.id === modalidadeId)
     const existeEstoque = estoqueLivrosList.find((estoque) => estoque.modalidadeId === modalidadeId)
     if (existeModalidade && !existeEstoque) {
@@ -36,9 +36,9 @@ export class EstoqueLivrosService {
 }
 
 deletarQuantidadeEstoque(estoqueData: EstoqueLivros) {
-  const { id, modalidadeId, quantidade, precoVenda } = estoqueData
+  const { id, modalidadeId, quantidade, precoAluguel } = estoqueData
 
-  if(!id || !modalidadeId || !quantidade || !precoVenda) {
+  if(!id || !modalidadeId || !quantidade || !precoAluguel) {
     throw new Error("Informaçãoes incompletas")
   }
 
@@ -60,9 +60,9 @@ deletarQuantidadeEstoque(estoqueData: EstoqueLivros) {
 
 
   atualizarEstoque(estoqueData: EstoqueLivros) {
-    const { id, modalidadeId, quantidade, precoVenda } = estoqueData
+    const { id, modalidadeId, quantidade, precoAluguel } = estoqueData
 
-    if(!id || !modalidadeId || !quantidade || !precoVenda) {
+    if(!id || !modalidadeId || !quantidade || !precoAluguel) {
       throw new Error("Informaçãoes incompletas")
     }
 

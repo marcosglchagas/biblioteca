@@ -1,14 +1,14 @@
-import { VendaLivros } from '../model/VendasLivros'
+import { AluguelLivros } from '../model/AluguelsLivros'
 
-const vendaLivrosList: VendaLivros[] = []
+const AluguelLivrosList: AluguelLivros[] = []
 
 
-export class VendaLivrosRepository {
-  insereVenda(venda: VendaLivros) {
-    vendaLivrosList.push(venda)
+export class AluguelLivrosRepository {
+  insereAluguel(Aluguel: AluguelLivros) {
+    AluguelLivrosList.push(Aluguel)
   }
 
-  filtrarTodasVendas(): VendaLivros[] {
-    return vendaLivrosList
+  filtrarTodasAluguels(): AluguelLivros[] {
+    return AluguelLivrosList
   }
 }
