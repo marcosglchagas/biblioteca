@@ -1,13 +1,13 @@
-import { generateId } from '../utils/generateId'
+// import { generateId } from '../utils/generateId'
 
-export class ModalidadeLivros {
-  id: number
-  nome: string
-  vegano: boolean
+// export class ModalidadeLivros {
+//   id: number
+//   nome: string
+//   vegano: boolean
 
-  constructor(nome: string, vegano: boolean) {
-    this.id = generateId()
-    this.nome = nome
-    this.vegano = vegano
-  }
-}
+//   constructor(nome: string, vegano: boolean) {
+//     this.id = generateId()
+//     this.nome = nome
+//     this.vegano = vegano
+//   }
+// }

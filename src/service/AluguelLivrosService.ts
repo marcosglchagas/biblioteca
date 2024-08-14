@@ -1,7 +1,7 @@
-import { AluguelLivros } from '../model/AluguelsLivros'
+import { AluguelLivros } from '../model/AluguelLivros'
 import { AluguelLivrosRepository } from '../repository/AluguelLivrosRepository';
 import { EstoqueLivrosService } from './EstoqueLivrosService'
-import { ModalidadeLivrosService } from './ModalidadeLivrosService'
+//import { ModalidadeLivrosService } from './ModalidadeLivrosService'
 
 export class AluguelLivrosService {
   AluguelLivrosRepository = new AluguelLivrosRepository()
@@ -23,7 +23,7 @@ export class AluguelLivrosService {
       valorTotal += item.quantidade * estoqueExiste.precoAluguel
       estoqueExiste.quantidade -= item.quantidade
     } else {
-      throw new Error("Estoque de pães não existe.")
+      throw new Error("Estoque de Livros não existe.")
     }
    })
 

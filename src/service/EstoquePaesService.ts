@@ -6,23 +6,23 @@ export class EstoqueLivrosService {
   estoqueLivrosRepository: EstoqueLivrosRepository = new EstoqueLivrosRepository()
 
   insereEstoque(itemEstoque: EstoqueLivros) {
-    const { modalidadeId, quantidade, precoAluguel } = itemEstoque
+    const { quantidade, precoAluguel } = itemEstoque
 
-    if (!modalidadeId || !quantidade || !precoAluguel) {
+    if ( !quantidade || !precoAluguel) {
       throw new Error("Informações incompletas")
     }
 
 
     const novoEstoque = new EstoqueLivros(modalidadeId, quantidade, precoAluguel)
-    const existeModalidade = modalidadeLivrosList.find((modalidade) => modalidade.id === modalidadeId)
+    //const existeModalidade = modalidadeLivrosList.find((modalidade) => modalidade.id === modalidadeId)
     const existeEstoque = estoqueLivrosList.find((estoque) => estoque.modalidadeId === modalidadeId)
-    if (existeModalidade && !existeEstoque) {
-      this.estoqueLivrosRepository.insereEstoque(novoEstoque)
-    } else {
-      throw new Error("Modalidade não existe")
-    }
+    // if (existeModalidade && !existeEstoque) {
+    //   this.estoqueLivrosRepository.insereEstoque(novoEstoque)
+    // } else {
+    //   throw new Error("Modalidade não existe")
+    // // }
 
-    return novoEstoque
+    // return novoEstoque
 
   }
 
@@ -36,9 +36,9 @@ export class EstoqueLivrosService {
 }
 
 deletarQuantidadeEstoque(estoqueData: EstoqueLivros) {
-  const { id, modalidadeId, quantidade, precoAluguel } = estoqueData
+  const { id, quantidade, precoAluguel } = estoqueData
 
-  if(!id || !modalidadeId || !quantidade || !precoAluguel) {
+  if(!id || !quantidade || !precoAluguel) {
     throw new Error("Informaçãoes incompletas")
   }
 
@@ -60,9 +60,9 @@ deletarQuantidadeEstoque(estoqueData: EstoqueLivros) {
 
 
   atualizarEstoque(estoqueData: EstoqueLivros) {
-    const { id, modalidadeId, quantidade, precoAluguel } = estoqueData
+    const { id, quantidade, precoAluguel } = estoqueData
 
-    if(!id || !modalidadeId || !quantidade || !precoAluguel) {
+    if(!id || !quantidade || !precoAluguel) {
       throw new Error("Informaçãoes incompletas")
     }
 

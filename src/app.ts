@@ -13,12 +13,12 @@ function logInfo() {
 }
 
 
-/*MODALIDADES Livros*/
-app.get('/api/modalidade/todos', listaModalidades)
-app.get('/api/modalidade/:id', consultarModalidade)
-app.post('/api/modalidade', cadastrarModalidade)
-app.put('/api/modalidade', atualizarModalidade)
-app.delete('/api/modalidade/:id', deletarModalidade)
+// /*MODALIDADES Livros*/
+// app.get('/api/modalidade/todos', listaModalidades)
+// app.get('/api/modalidade/:id', consultarModalidade)
+// app.post('/api/modalidade', cadastrarModalidade)
+// app.put('/api/modalidade', atualizarModalidade)
+// app.delete('/api/modalidade/:id', deletarModalidade)
 
 /*ESTOQUES Livros*/
 app.post('/api/estoque', insereEstoque)
@@ -29,7 +29,7 @@ app.delete('/api/estoque', deletarQuantidadeEstoque)
 
 /*AluguelS Livros*/
 app.post('/api/Aluguel', insereAluguel)
-app.get('/api/Aluguel', listaAluguels)
+app.get('/api/Aluguel', listaAluguel)
 
 
 app.listen(PORT, logInfo)
