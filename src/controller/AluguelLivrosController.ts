@@ -1,7 +1,7 @@
 import { AluguelLivrosService } from '../service/AluguelLivrosService'
 import { Request, Response } from 'express'
 
-const AluguelLivrosService = new AluguelLivrosService()
+const aluguelLivrosService = new AluguelLivrosService()
 
 export function insereAluguel(req: Request, res: Response) {
   try {
