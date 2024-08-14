@@ -1,4 +1,4 @@
-import { AluguelLivros } from '../model/AluguelsLivros'
+import { AluguelLivros } from '../model/AluguelLivros'
 
 const AluguelLivrosList: AluguelLivros[] = []
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import { atualizarModalidade, cadastrarModalidade, consultarModalidade, deletarModalidade, listaModalidades } from './controller/ModalidadeLivrosController'
+//import { atualizarModalidade, cadastrarModalidade, consultarModalidade, deletarModalidade, listaModalidades } from './controller/ModalidadeLivrosController'
 import { insereEstoque, listaEstoques, consultarEstoque, atualizarEstoque, deletarQuantidadeEstoque  } from './controller/EstoqueLivrosController'
 import { insereAluguel, listaAluguels } from './controller/AluguelLivrosController'
 
@@ -29,7 +29,7 @@ app.delete('/api/estoque', deletarQuantidadeEstoque)
 
 /*AluguelS Livros*/
 app.post('/api/Aluguel', insereAluguel)
-app.get('/api/Aluguel', listaAluguel)
+app.get('/api/Aluguel', listaAluguels)
 
 
 app.listen(PORT, logInfo)

@@ -6,7 +6,7 @@ import { EstoqueLivrosService } from './EstoqueLivrosService'
 export class AluguelLivrosService {
   AluguelLivrosRepository = new AluguelLivrosRepository()
   estoqueLivrosService = new EstoqueLivrosService()
-  modalidadeLivrosService = new ModalidadeLivrosService()
+ // modalidadeLivrosService = new ModalidadeLivrosService()
 
   insereAluguel(Aluguel: AluguelLivros) {
    const {cpfCliente, itensAluguel} = Aluguel

@@ -1,4 +1,4 @@
-import { AluguelLivros } from './AluguelsLivros'
+import { AluguelLivros } from './AluguelLivros'
 
 export class ItemAluguel {
   estoqueLivrosId: number
