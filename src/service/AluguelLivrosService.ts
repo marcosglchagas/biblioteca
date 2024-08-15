@@ -1,12 +1,11 @@
 import { AluguelLivros } from '../model/AluguelLivros'
 import { AluguelLivrosRepository } from '../repository/AluguelLivrosRepository';
 import { EstoqueLivrosService } from './EstoqueLivrosService'
-//import { ModalidadeLivrosService } from './ModalidadeLivrosService'
 
 export class AluguelLivrosService {
   AluguelLivrosRepository = new AluguelLivrosRepository()
   estoqueLivrosService = new EstoqueLivrosService()
- // modalidadeLivrosService = new ModalidadeLivrosService()
+ 
 
   insereAluguel(Aluguel: AluguelLivros) {
    const {cpfCliente, itensAluguel} = Aluguel
@@ -15,7 +14,7 @@ export class AluguelLivrosService {
    }
 
    let valorTotal: number = 0
-  // let nomeModalidade: string | undefined;
+
    itensAluguel.map((item) => {
     const estoqueLivrosId = item.estoqueLivrosId
     const estoqueExiste = this.estoqueLivrosService.consultarEstoque(estoqueLivrosId)

@@ -14,14 +14,8 @@ export class EstoqueLivrosService {
 
 
     const novoEstoque = new EstoqueLivros( quantidade, precoAluguel)
-    //const existeModalidade = modalidadeLivrosList.find((modalidade) => modalidade.id === modalidadeId)
-    //const existeEstoque = estoqueLivrosList.find((estoque) => estoque.modalidadeId === modalidadeId)
-    // if (existeModalidade && !existeEstoque) {
-    this.estoqueLivrosRepository.insereEstoque(novoEstoque)
-    // } else {
-    //   throw new Error("Modalidade não existe")
-    // // }
 
+    this.estoqueLivrosRepository.insereEstoque(novoEstoque)
     return novoEstoque
 
   }
