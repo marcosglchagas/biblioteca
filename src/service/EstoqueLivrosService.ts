@@ -17,12 +17,12 @@ export class EstoqueLivrosService {
     //const existeModalidade = modalidadeLivrosList.find((modalidade) => modalidade.id === modalidadeId)
     //const existeEstoque = estoqueLivrosList.find((estoque) => estoque.modalidadeId === modalidadeId)
     // if (existeModalidade && !existeEstoque) {
-    //   this.estoqueLivrosRepository.insereEstoque(novoEstoque)
+    this.estoqueLivrosRepository.insereEstoque(novoEstoque)
     // } else {
     //   throw new Error("Modalidade não existe")
     // // }
 
-    // return novoEstoque
+    return novoEstoque
 
   }
 

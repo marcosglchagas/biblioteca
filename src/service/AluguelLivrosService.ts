@@ -15,7 +15,7 @@ export class AluguelLivrosService {
    }
 
    let valorTotal: number = 0
-   let nomeModalidade: string | undefined;
+  // let nomeModalidade: string | undefined;
    itensAluguel.map((item) => {
     const estoqueLivrosId = item.estoqueLivrosId
     const estoqueExiste = this.estoqueLivrosService.consultarEstoque(estoqueLivrosId)
